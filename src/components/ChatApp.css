@@ -11,13 +11,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
 .chat-container {
     width: 100%;
-    max-width: 1000px; /* Increased width for a wider chatbot */
+    max-width: 1000px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,13 +56,12 @@ body {
     margin-left: 10px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-  }
-  
-  .mic-button.recording {
+}
+
+.mic-button.recording {
     color: red;
     transform: scale(1.2);
-  }
-  
+}
 
 .chat-message {
     display: flex;
@@ -160,5 +159,40 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ✅ Responsive Styling for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        height: 100dvh;
+        border-radius: 0;
+    }
+
+    .chat-box {
+        padding: 15px;
+    }
+
+    .chat-message,
+    .user-message {
+        max-width: 90%;
+        font-size: 15px;
+    }
+
+    .chat-input-area {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .chat-input-area input,
+    .chat-input-area button {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .bot-message img {
+        width: 32px;
+        height: 32px;
     }
 }

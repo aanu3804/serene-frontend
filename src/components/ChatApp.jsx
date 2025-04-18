@@ -65,7 +65,7 @@ const ChatApp = () => {
     setMessages((prev) => [...prev, { text: userInput, sender: "user" }]);
 
     try {
-      const response = await fetch("http://localhost:5000/chat/text", {
+      const response = await fetch("https://serene-backend-q0cm.onrender.com/chat/text", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userInput }),
@@ -132,7 +132,7 @@ const ChatApp = () => {
       audio.currentTime = 0;
     }
   
-    const newAudio = new Audio(`http://localhost:5000/audio/${audioFilename}`);
+    const newAudio = new Audio(`https://serene-backend-q0cm.onrender.com/audio/${audioFilename}`);
     
     newAudio.onended = () => setAudio(null); // optional cleanup
     newAudio.play()

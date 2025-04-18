@@ -180,15 +180,20 @@ body {
     }
 
     .chat-input-area {
-        flex-direction: column;
+        flex-direction: row; /* ✅ Keep input and button side-by-side */
         gap: 8px;
         padding: 10px;
     }
 
-    .chat-input-area input,
-    .chat-input-area button {
+    .chat-input-area input {
         font-size: 15px;
         width: 100%;
+    }
+
+    .chat-input-area button {
+        font-size: 15px;
+        white-space: nowrap;
+        padding: 10px 16px;
     }
 
     .bot-message img {
@@ -196,3 +201,4 @@ body {
         height: 32px;
     }
 }
+
